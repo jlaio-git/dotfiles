@@ -108,4 +108,5 @@ alias ls="lsd"
 alias ga="git add -A"
 alias gc="git commit -a -m"
 alias gp="git push"
+alias gs="git status"
 

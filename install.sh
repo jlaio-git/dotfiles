@@ -11,6 +11,7 @@ set -e
 declare -a DOTFILES_MAP=(
     "zshrc:.zshrc"
     "nvim:.config/nvim"
+    "tmux:.config/tmux"
 )
 
 # --- Script Logic ---

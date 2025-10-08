@@ -8,6 +8,7 @@ vim.opt.signcolumn = "yes"
 
 vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
+	{ src = "https://github.com/alexghergh/nvim-tmux-navigation" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
 	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
@@ -50,3 +51,14 @@ require("blink.cmp").setup({
 })
 
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+
+require("nvim-tmux-navigation").setup({
+	disable_when_zoomed = true, -- defaults to false
+})
+
+-- Keymaps {{{
+vim.keymap.set("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
+vim.keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>")
+vim.keymap.set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
+vim.keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateTop<CR>")
+-- }}}

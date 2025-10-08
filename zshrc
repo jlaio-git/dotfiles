@@ -105,4 +105,7 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias vimconfig="nvim ~/.config/nvim/init.lua"
 alias vim="nvim"
 alias ls="lsd"
+alias ga="git add -A"
+alias gc="git commit -a -m"
+alias gp="git push"
 

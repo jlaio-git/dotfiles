@@ -10,6 +10,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+
+
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -76,6 +79,26 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/jla/miniforge3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/jla/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/jla/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/jla/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -109,4 +132,4 @@ alias ga="git add -A"
 alias gc="git commit -a -m"
 alias gp="git push"
 alias gs="git status"
-
+alias vf='nvim $(fzf --preview "bat --style=numbers --color=always {} 2>/dev/null || cat {}")'
